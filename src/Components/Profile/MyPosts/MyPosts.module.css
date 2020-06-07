@@ -1,0 +1,36 @@
+.form{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+.form h2{
+  font-weight: 500;
+}
+
+.inpText{
+  width: 85%;
+  height: 50px;
+  border: none;
+  background-color: #F0EEEE;
+  text-align: start;
+  font-size: 16px;
+  padding: 10px 0px 0px 10px;
+  resize: none;
+}
+.inpText::placeholder{
+  color: #C6CCC6;
+}
+
+.button{
+  background-color: #42AA3A;
+  width: 100px;
+  border: none;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 734px;
+  color: white;
+  text-align: start;
+  font-size: 16px;
+}
+

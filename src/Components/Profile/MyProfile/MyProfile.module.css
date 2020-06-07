@@ -1,0 +1,39 @@
+.myProfile{
+    display: flex;
+      }
+    .myProfile img{
+      width: 150px;
+      height: 150px;
+      margin: 20px 20px 0px 20px;
+    }  
+    
+    .text{
+      margin-left: 30px;
+      line-height: 10px;
+    }
+    .text h1{
+      font-weight: normal;
+      padding-bottom: 0px;
+    }
+  .statusMain{
+    margin: 20px 0px 30px 0px;
+    width: 300px;
+   
+  }
+  .status{
+    height: 20px;
+  }
+  .status p{
+    font-weight: 450;
+    color: white;
+    padding: 5px;
+  }
+  .status:hover{
+    background-color: wheat;
+    cursor: pointer;
+  }
+  .input{
+    outline: none;
+    width: 100%;
+  }
+ 

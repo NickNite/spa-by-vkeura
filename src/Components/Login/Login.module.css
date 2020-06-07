@@ -1,0 +1,34 @@
+.main{
+    position: relative;
+   margin-top: 200px;
+    text-align: center;
+}
+.button{
+    margin: 10px 0px 0px 20px;
+}
+.main input{
+    margin-left: 20px;
+}
+.form span{
+    color: white;
+    font-weight: 400;
+}
+.form input{
+    outline: none;
+}
+.inputs{
+    margin-bottom: 20px;
+    display: flex;
+}
+.inputCont{
+    position: relative;
+    left: 360px;
+}
+.password{
+    margin-left: -26px;
+}
+.error{
+    color: red;
+    border: 1px solid red;
+    
+}

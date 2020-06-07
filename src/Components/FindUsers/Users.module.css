@@ -1,0 +1,57 @@
+.right h2, .right p{
+    margin: 0px;
+    padding: 0px;
+}
+.left img{
+    width: 100px;
+    height: 100px;
+}
+
+.user{
+    display: flex;
+    margin: 20px;
+    height:  150px;
+}
+.left{
+    margin: 20px 10px 10px 50px;
+}
+
+.left button{
+    width: 100px;
+    margin-top: 10px;
+    background-color: #148B12;
+    border: none;
+    color: white;
+    height: 20px;
+}
+.left button:active{
+    outline: none;
+}
+.left button:disabled{
+    background-color: rgb(199, 199, 199);
+}
+
+.right{
+    display: flex;
+    background-color: #D4C8B8;
+    width: 60%;
+    justify-content: space-between;
+    margin: 20px 0px 0px 50px;
+    height: 100px;
+    border-radius: 70px;
+}
+.right div{
+    margin: 10px 40px 10px 40px;
+    display: flex;
+    flex-direction: column;
+}
+#name{
+justify-content: space-between;
+}
+#name h2, #country h2{
+font-size: 18px;
+}
+#country{
+    text-align: end;
+    justify-content: center;
+}

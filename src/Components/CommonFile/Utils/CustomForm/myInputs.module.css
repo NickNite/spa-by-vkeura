@@ -1,0 +1,13 @@
+.formControl.error input{
+    border: 1px solid red;
+}
+.formControl.error span{
+    color: red;
+    margin-left: 10px;
+}
+.formControl.warning input{
+    border: 1px solid yellow;
+}
+.formControl{
+display: flex;   
+}
