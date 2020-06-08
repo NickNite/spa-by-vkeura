@@ -1,35 +1,35 @@
 self.__precacheManifest = [
   {
-    "revision": "fc4a9287a5ce15f71718",
+    "revision": "1cbf4afc25ac7dee9b9a",
     "url": "/spa-by-vkeura/static/css/main.6ba808be.chunk.css"
   },
   {
-    "revision": "fc4a9287a5ce15f71718",
-    "url": "/spa-by-vkeura/static/js/main.612c2e02.chunk.js"
+    "revision": "1cbf4afc25ac7dee9b9a",
+    "url": "/spa-by-vkeura/static/js/main.c4db3dc4.chunk.js"
   },
   {
-    "revision": "2d4a185ab656f6e22bd6",
-    "url": "/spa-by-vkeura/static/js/runtime~main.f9f4b656.js"
+    "revision": "44088163da679071d6f2",
+    "url": "/spa-by-vkeura/static/js/runtime~main.841695fc.js"
   },
   {
-    "revision": "f4b6074c99fd9c278ab0",
-    "url": "/spa-by-vkeura/static/js/2.4cef7cba.chunk.js"
+    "revision": "619805f32e2f366c0142",
+    "url": "/spa-by-vkeura/static/js/2.43c03dd3.chunk.js"
   },
   {
-    "revision": "38940b432b226e7c9bee",
+    "revision": "996dfc61202b40fe743c",
     "url": "/spa-by-vkeura/static/css/3.a13d8372.chunk.css"
   },
   {
-    "revision": "38940b432b226e7c9bee",
-    "url": "/spa-by-vkeura/static/js/3.a4e53718.chunk.js"
+    "revision": "996dfc61202b40fe743c",
+    "url": "/spa-by-vkeura/static/js/3.f0b50edb.chunk.js"
   },
   {
-    "revision": "d0963c89b46c1293e993",
+    "revision": "963ed8d53e973e116b39",
     "url": "/spa-by-vkeura/static/css/4.2ba01bdb.chunk.css"
   },
   {
-    "revision": "d0963c89b46c1293e993",
-    "url": "/spa-by-vkeura/static/js/4.458236b8.chunk.js"
+    "revision": "963ed8d53e973e116b39",
+    "url": "/spa-by-vkeura/static/js/4.46d24340.chunk.js"
   },
   {
     "revision": "6caf05c1096d8d805da2",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/spa-by-vkeura/static/media/arrow2.85be77cf.png"
   },
   {
-    "revision": "557fedc9b34683c85c3a248857127c54",
+    "revision": "e283eff6c8a8706a34c985fd61789822",
     "url": "/spa-by-vkeura/index.html"
   }
 ];
