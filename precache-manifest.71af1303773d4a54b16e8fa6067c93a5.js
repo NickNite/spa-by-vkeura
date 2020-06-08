@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1cbf4afc25ac7dee9b9a",
+    "revision": "a94f16f4e5dd8277053d",
     "url": "/spa-by-vkeura/static/css/main.6ba808be.chunk.css"
   },
   {
-    "revision": "1cbf4afc25ac7dee9b9a",
-    "url": "/spa-by-vkeura/static/js/main.c4db3dc4.chunk.js"
+    "revision": "a94f16f4e5dd8277053d",
+    "url": "/spa-by-vkeura/static/js/main.ef777cdb.chunk.js"
   },
   {
     "revision": "44088163da679071d6f2",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/spa-by-vkeura/static/media/arrow2.85be77cf.png"
   },
   {
-    "revision": "e283eff6c8a8706a34c985fd61789822",
+    "revision": "d5bb1c9eb22d9eccf6090d1cc9ab627f",
     "url": "/spa-by-vkeura/index.html"
   }
 ];
