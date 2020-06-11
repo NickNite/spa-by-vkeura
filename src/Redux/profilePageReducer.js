@@ -5,6 +5,7 @@ let ADD_POST = 'src/Redux/ADD-POST';
 let SET_USER_PROFILE = 'src/Redux/SET-USER-PROFILE';
 let GET_PROFILE_STATUS = 'src/Redux/GET-PROFILE-STATUS';
 let DELETE_POST = 'src/Redux/DELETE-POST';
+let SAVE_PHOTO = 'src/Redux/SAVE-PHOTO';
 
 let inicialState = {
     postsData: [
@@ -31,6 +32,8 @@ const profilePageReducer = (state = inicialState, action) => {
             return { ...state, profileStatus: action.status };
         case DELETE_POST:
             return { ...state, postsData: state.postsData.filter(item => item.id != action.userId) };
+        case SAVE_PHOTO:
+            return { ...state, profileDate: { ...state.profileDate, photos: action.photo } };
         default:
             return state;
     }
@@ -41,30 +44,36 @@ export const updatePosts = (newPost) => { return { type: ADD_POST, newPost } };
 export const setUserProfile = (profile) => { return { type: SET_USER_PROFILE, profile } };
 export const getUserStatus = (status) => { return { type: GET_PROFILE_STATUS, status } };
 export const deletePosts = (userId) => { return { type: DELETE_POST, userId } };
+export const savePhotoSuccess = (photo) => { return { type: SAVE_PHOTO, photo } };
 
 
 //thunk
 export const getProfile = (userId) => {
-    return (dispatch) => {
-        profileApi.showProfile(userId).then(response => { //показываем пользователя
-            dispatch(setUserProfile(response.data));
-        })
+    return async (dispatch) => {
+        let response = await profileApi.showProfile(userId); //показываем пользователя
+        dispatch(setUserProfile(response.data));
     }
 };
 export const getStatus = (userId) => {
-    return (dispatch) => {
-        profileApi.getProfileStatus(userId).then(response => { //показываем статус пользователя
-            dispatch(getUserStatus(response.data));
-        })
+    return async (dispatch) => {
+        let response = await profileApi.getProfileStatus(userId); //показываем статус пользователя
+        dispatch(getUserStatus(response.data));
     }
 };
 export const setProfileStatus = (status) => {
-    return (dispatch) => {
-        profileApi.setProfileStatus(status).then(response => { //меняем статус
-            if (response.data.resultCode === 0) {
-                dispatch(getUserStatus(status))
-            };
-        })
+    return async (dispatch) => {
+        let response = await profileApi.setProfileStatus(status); //меняем статус
+        if (response.data.resultCode === 0) {
+            dispatch(getUserStatus(status))
+        };
+    }
+};
+export const savePhoto = (photo) => {
+    return async (dispatch) => {
+        let response = await profileApi.savePhoto(photo); //меняем аватар
+        if (response.data.resultCode === 0) {
+            dispatch(savePhotoSuccess(response.data.data.photos))
+        };
     }
 };
 

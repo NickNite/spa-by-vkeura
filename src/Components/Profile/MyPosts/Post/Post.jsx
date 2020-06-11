@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './Post.module.css';
-
+import like from '../../../../Decor/Image/Like.png'
 
 const Post = props => {
     return (
         <div className={styles.post}>
-            <img src='https://www.meme-arsenal.com/memes/bf0296e8bfa92558d0ca180289194068.jpg' />
-            <div className={styles.text}>{props.message}</div>
-            <span className={styles.like}>Like {props.likeCount}</span>
+            <div className={styles.image}>
+                <img src='https://www.meme-arsenal.com/memes/bf0296e8bfa92558d0ca180289194068.jpg' />
+            </div>
+            <div className={styles.text}><p>{props.message}</p></div>
+            <div className={styles.like}>
+                <img src={like} alt="" />
+                <span>{props.likeCount}</span>
+            </div>
         </div>
     )
 };

@@ -1,20 +1,21 @@
 .header{
     grid-area: h;
     background-color: #1FBB51;
-    border-radius: 20px;
     display: flex;
-    justify-content: space-between;
-    width: 1200px;
+    justify-content: space-around;
+    width: 100%;
     z-index: 100;
+    position: fixed;
+    left: 0.1px;
   }
   .header img{
     width: 50px;
     height: 50px;
-    margin-left: 50px;
+    margin-left: -130px;
     margin-top: 5px;
   }
   .login{
-    margin: 20px 50px 0px 0px;
+    margin: 20px -140px 0px 0px;
     color: white;
     font-weight: bold;
   }

@@ -14,7 +14,7 @@ const Nav = (props) => {
                 <li><NavLink activeClassName={styles.active} to='/findusers'>Find Users</NavLink></li>
                 <li className={styles.lastLi}><NavLink activeClassName={styles.active} to='/setting'>Setting</NavLink></li>
             </ul>
-            <MyFriends />
+            {/* <MyFriends /> */}
         </nav>
     )
 }

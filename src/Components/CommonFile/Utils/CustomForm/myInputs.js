@@ -3,8 +3,8 @@ import styles from './myInputs.module.css'
 
 export const Textarea = ({ input, meta, ...props }) => {
     return (
-        <div>
-            <textarea {...input} {...props} />
+        <div className={styles.textarea}>
+            <textarea  {...input} {...props} />
         </div >
     )
 };

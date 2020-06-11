@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-import { getProfile, getStatus, setProfileStatus } from '../../Redux/profilePageReducer';
+import { getProfile, getStatus, setProfileStatus, savePhoto } from '../../Redux/profilePageReducer';
 import { withRouter } from 'react-router-dom';
 import { withAuthRedirect } from '../../HOCS/withAuthRedirect';
 import { compose } from 'redux';
@@ -9,7 +9,7 @@ import { compose } from 'redux';
 
 class ProfilePage extends React.Component {
 
-    componentDidMount() {
+    refreshProfile() {
         let userId = this.props.match.params.userId;
         if (!userId) {
             userId = this.props.logUserId;
@@ -18,9 +18,19 @@ class ProfilePage extends React.Component {
         this.props.getStatus(userId);
     };
 
+    componentDidMount() {
+        this.refreshProfile();
+    };
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.match.params.userId != prevProps.match.params.userId) {
+            this.refreshProfile();
+        }
+    };
 
     render() {
-        return <Profile profile={this.props.profile} isAuth={this.props.isAuth} status={this.props.profileStatus} setProfileStatus={this.props.setProfileStatus} />
+        console.log('q')
+        return <Profile savePhoto={this.props.savePhoto} isOwner={!this.props.match.params.userId} profile={this.props.profile} isAuth={this.props.isAuth} status={this.props.profileStatus} setProfileStatus={this.props.setProfileStatus} />
     };
 };
 
@@ -37,7 +47,8 @@ let mapStateToProps = state => {
 let newDispatchToProps = {
     getProfile,
     getStatus,
-    setProfileStatus
+    setProfileStatus,
+    savePhoto
 };
 
 

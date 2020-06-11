@@ -1,36 +1,31 @@
 .form{
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-  margin-left: 30px;
+  margin-left: 20px; 
 }
-.form h2{
-  font-weight: 500;
+.newPost{
+  box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
+  background-color: white;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 
+.newPost textarea{
+  margin-top: 20px;
+}
 .inpText{
   width: 85%;
   height: 50px;
-  border: none;
-  background-color: #F0EEEE;
-  text-align: start;
-  font-size: 16px;
-  padding: 10px 0px 0px 10px;
-  resize: none;
-}
+ }
 .inpText::placeholder{
   color: #C6CCC6;
 }
 
 .button{
+  text-align: center;
   background-color: #42AA3A;
   width: 100px;
   border: none;
   height: 25px;
-  margin-top: 20px;
-  margin-left: 734px;
   color: white;
-  text-align: start;
   font-size: 16px;
+  margin: 20px 0px 20px 750px ;
 }
-

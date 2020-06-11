@@ -6,20 +6,40 @@ import MyProfileStatus from './MyProfileStatus';
 
 
 
+
 const MyProfile = props => {
     if (!props.profile) {
         return <Preloader />
+    };
+
+    const changePhoto = event => {
+        if (event.target.files.length) {
+            props.savePhoto(event.target.files[0])
+        }
     }
+
     return (
         <div className={styles.myProfile}>
-            <img src={!props.profile.photos.small ? userNoPhoto : props.profile.photos.small} />
+            <div className={styles.photos}>
+                <img src={!props.profile.photos.large ? userNoPhoto : props.profile.photos.small} />
+                {props.isOwner &&
+                    <div className={styles.inputBlock}>
+                        <input type={"file"} onChange={changePhoto} name="file" id="file" className={styles.inputHidden} />
+                        <label for="file" className={styles.inputButton}>Change photo</label>
+                    </div>
+                }
+            </div>
             <div className={styles.text}>
-                <h1>{props.profile.fullName}</h1>
-                <MyProfileStatus status={props.status} setProfileStatus={props.setProfileStatus} />
-                <p><b>Date birth :</b> 28 february</p>
-                <p><b>City:</b> Los-Angeles</p>
-                <p><b>Education:</b> Standford</p>
-                <p><b>Web-Site:</b> {props.profile.contacts.twitter}</p>
+                <div className={styles.userName}>
+                    <h1>{props.profile.fullName}</h1>
+                    <MyProfileStatus status={props.status} setProfileStatus={props.setProfileStatus} />
+                </div>
+                <div className={styles.profileInfo}>
+                    <p><h4>Date birth :</h4> <span>28 february</span></p>
+                    <p><h4>City:</h4> <span>Los-Angeles</span></p>
+                    <p><h4>Education:</h4> <span>Standford</span></p>
+                    <p><h4>Web-Site:</h4> <span>{props.profile.contacts.twitter}</span></p>
+                </div>
             </div>
         </div>
     )

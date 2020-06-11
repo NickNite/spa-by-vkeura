@@ -9,9 +9,12 @@
 .sidebar{
     grid-area: s;
     background-color: #1FBB51;
-    margin-top: 20px;
-    border-radius: 10px;
-    height: 700px;
+    border-radius: 5px;
+    max-height: 400px;
+    position: fixed;
+    top: 80px;
+    margin-left: 0px;
+    padding: 10px 50px 50px 20px;
   }
   li a{
     text-decoration: none;

@@ -10,7 +10,7 @@ const Profile = props => {
             <div className={styles.mainImage}>
                 <img src='https://html5css.ru/howto/img_snow_wide.jpg' />
             </div>
-            <MyProfile profile={props.profile} status={props.status} setProfileStatus={props.setProfileStatus} />
+            <MyProfile savePhoto={props.savePhoto} profile={props.profile} isOwner={props.isOwner} status={props.status} setProfileStatus={props.setProfileStatus} />
             <MyPostsContainer />
         </div>
     )

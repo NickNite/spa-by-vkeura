@@ -15,12 +15,13 @@ const MyPosts = props => {
 
     return (
         <div>
-            <h2>My posts</h2>
-            <MyPostFormContainer onSubmit={addNewPost} />
-            <div className={styles.faq}>
+            <div className={styles.newPost}>
+                <MyPostFormContainer onSubmit={addNewPost} />
+            </div>
+            <div >
                 {newPostsData}
             </div>
-        </div>
+        </div >
     )
 
 };

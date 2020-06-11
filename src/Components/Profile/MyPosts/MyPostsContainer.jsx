@@ -22,7 +22,7 @@ let newDispatchToProps = {
 const myPostForm = props => {
     return (
         <form className={styles.form} onSubmit={props.handleSubmit}>
-            <Field component={Textarea} name={"newPost"} className={styles.inpText} validate={[requiredSymbol]} placeholder='your news...' />
+            <Field component={Textarea} name={"newPost"} className={styles.inpText} validate={[requiredSymbol]} placeholder='add new post' />
             <button className={styles.button}>Send</button>
         </form>
     )
