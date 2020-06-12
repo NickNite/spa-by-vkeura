@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{305:function(n,e,a){n.exports={main:"Setting_main__3nesV"}},308:function(n,e,a){"use strict";a.r(e);var t=a(0),i=a.n(t),o=a(305),r=a.n(o);e.default=function(n){return i.a.createElement("div",{className:r.a.main},i.a.createElement("p",null,"Sorry, not yet available"))}}}]);
+//# sourceMappingURL=8.ea8acb4b.chunk.js.map
