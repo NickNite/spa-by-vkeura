@@ -1,10 +1,10 @@
 import React from 'react';
-import a from './Setting.module.css';
+import styles from './Setting.module.css';
 
 const Setting = (props) => {
     return (
-        <div>
-            Setting
+        <div className={styles.main}>
+            <p>Sorry, not yet available</p>
         </div>
 
     )

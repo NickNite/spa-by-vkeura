@@ -16,7 +16,6 @@ export const InputField = ({ input, meta, ...props }) => {
         <div className={styles.formControl + " " + (isError ? styles.error : '')}>
             <input  {...input} {...props} />
             {isError && <span>{meta.error}</span>}
-
         </div>
     )
 };

@@ -10,10 +10,16 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.form}>
             <div className={styles.inputCont}>
-                <div className={styles.inputs}><span>Login:</span><Field component={InputField} name={"email"} placeholder="login" validate={[requiredSymbol, props.maxLengthLogin, props.minLengthLogin]} /></div>
-                <div className={styles.inputs + " " + styles.password} ><span>Password:</span><Field component={InputField} type="password" name={"password"} placeholder="password" validate={[requiredSymbol, props.maxLengthPass, props.minLengthPass]} /></div>
+                <div className={styles.inputs}>
+                    <span>Login:</span>
+                    <Field component={InputField} name={"email"} placeholder="login" validate={[requiredSymbol, props.maxLengthLogin, props.minLengthLogin]} />
+                </div>
+                <div className={styles.inputs + " " + styles.password} >
+                    <span>Password:</span>
+                    <Field component={InputField} type="password" name={"password"} placeholder="password" validate={[requiredSymbol, props.maxLengthPass, props.minLengthPass]} />
+                </div>
             </div>
-            <div><Field component={"input"} name={"rememberMe"} type={"checkbox"} />  remember me</div>
+            <div className={styles.checkbox}><Field component={"input"} name={"rememberMe"} type={"checkbox"} />  remember me</div>
             {props.error && <div className={styles.error}>{props.error}</div>}
             <input name={"button"} type={"submit"} className={styles.button} value="Login in" />
         </form>

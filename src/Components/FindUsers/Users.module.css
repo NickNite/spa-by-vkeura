@@ -3,20 +3,26 @@
     padding: 0px;
 }
 .left img{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .user{
     display: flex;
-    margin: 20px;
-    height:  150px;
+    height:  100px;
+    margin: 0px 20px 0px 20px;
+    border-bottom: 1px solid #e7e8ec;
 }
-.left{
-    margin: 20px 10px 10px 50px;
+.users{
+    background: white; 
+    margin: 30px 20px 0px 100px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #e7e8ec;
 }
-
-.left button{
+.right button{
     width: 100px;
     margin-top: 10px;
     background-color: #148B12;
@@ -24,21 +30,18 @@
     color: white;
     height: 20px;
 }
-.left button:active{
+.right button:active{
     outline: none;
 }
-.left button:disabled{
+.right button:disabled{
     background-color: rgb(199, 199, 199);
 }
 
 .right{
     display: flex;
-    background-color: #D4C8B8;
-    width: 60%;
+    width: 100%;
     justify-content: space-between;
     margin: 20px 0px 0px 50px;
-    height: 100px;
-    border-radius: 70px;
 }
 .right div{
     margin: 10px 40px 10px 40px;
@@ -47,11 +50,25 @@
 }
 #name{
 justify-content: space-between;
+word-break: break-all;
+margin-left: -30px;
+margin-top: -15px;
 }
-#name h2, #country h2{
-font-size: 18px;
+#name h2 {
+font-size: 16px;
 }
-#country{
-    text-align: end;
-    justify-content: center;
+#name p{
+    font-size: 12px; 
+    margin-bottom: 40px;
 }
+.pagination{
+    border: 1px solid #e7e8ec;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    top: 55px;
+    margin-left: 100px;
+    width: 600px;
+    position: sticky;
+  background-color: white;
+}
+

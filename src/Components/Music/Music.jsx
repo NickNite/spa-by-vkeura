@@ -1,10 +1,10 @@
 import React from 'react';
-import a from './Music.module.css';
+import styles from './Music.module.css';
 
 const Music = (props) => {
     return (
-        <div>
-            Music
+        <div className={styles.main}>
+            <p>Sorry, not yet available</p>
         </div>
 
     )

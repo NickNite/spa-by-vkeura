@@ -1,10 +1,15 @@
 .dialog{
     padding: 10px;
     display: flex;
+    border-bottom: 1px solid #dfe2e8;
+    margin: 0px 20px 0px 20px;
+}
+.dialog a{
+    color: black;
+    font-weight: 500;
 }
 .dialog a{
     text-decoration: none;
-    color: white;
     margin-left: 20px;
     padding-top: 15px;
 }

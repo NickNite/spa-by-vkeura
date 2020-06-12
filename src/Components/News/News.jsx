@@ -1,10 +1,10 @@
 import React from 'react';
-import a from './News.module.css';
+import styles from './News.module.css';
 
 const News = (props) => {
     return (
-        <div>
-            News
+        <div className={styles.main}>
+            <p>Sorry, not yet available</p>
         </div>
 
     )
