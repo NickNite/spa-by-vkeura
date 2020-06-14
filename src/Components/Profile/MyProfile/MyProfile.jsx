@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './MyProfile.module.css';
 import Preloader from '../../CommonFile/Preloader/Preloader';
 import userNoPhoto from '../../../Decor/Image/userNoPhoto.png'
 import MyProfileStatus from './MyProfileStatus';
+import { ProfileInfo, ProfileInfoReduxForm } from './ProfileInfoEdit';
 
 
 
 
-const MyProfile = props => {
-    if (!props.profile) {
+
+const MyProfile = ({ saveProfile, profile, ...props }) => {
+
+    let [editMode, setEditMode] = useState(false);
+
+    if (!profile) {
         return <Preloader />
     };
 
@@ -16,12 +21,16 @@ const MyProfile = props => {
         if (event.target.files.length) {
             props.savePhoto(event.target.files[0])
         }
-    }
-
+    };
+    const onSubmit = (formData) => {
+        saveProfile(formData).then(() => {
+            setEditMode(false)
+        })
+    };
     return (
         <div className={styles.myProfile}>
             <div className={styles.photos}>
-                <img src={!props.profile.photos.large ? userNoPhoto : props.profile.photos.small} />
+                <img src={!profile.photos.large ? userNoPhoto : profile.photos.small} />
                 {props.isOwner &&
                     <div className={styles.inputBlock}>
                         <input type={"file"} onChange={changePhoto} name="file" id="file" className={styles.inputHidden} />
@@ -29,20 +38,14 @@ const MyProfile = props => {
                     </div>
                 }
             </div>
-            <div className={styles.text}>
-                <div className={styles.userName}>
-                    <h1>{props.profile.fullName}</h1>
-                    <MyProfileStatus status={props.status} setProfileStatus={props.setProfileStatus} />
-                </div>
-                <div className={styles.profileInfo}>
-                    <p><h4>Date birth :</h4> <span>28 february</span></p>
-                    <p><h4>City:</h4> <span>Los-Angeles</span></p>
-                    <p><h4>Education:</h4> <span>Standford</span></p>
-                    <p><h4>Web-Site:</h4> <span>{props.profile.contacts.twitter}</span></p>
-                </div>
+            <div className={styles.userInfo}>
+                {editMode
+                    ? <ProfileInfoReduxForm initialValues={profile} onSubmit={onSubmit} editModeToggle={() => { setEditMode(false) }} profile={profile} isOwner={props.isOwner} />
+                    : <ProfileInfo status={props.status} setProfileStatus={props.setProfileStatus} editModeToggle={() => { setEditMode(true) }} profile={profile} isOwner={props.isOwner} />}
             </div>
         </div>
     )
 }
+
 
 export default MyProfile;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
-import { getProfile, getStatus, setProfileStatus, savePhoto } from '../../Redux/profilePageReducer';
+import { getProfile, getStatus, setProfileStatus, savePhoto, saveProfile } from '../../Redux/profilePageReducer';
 import { withRouter } from 'react-router-dom';
 import { withAuthRedirect } from '../../HOCS/withAuthRedirect';
 import { compose } from 'redux';
@@ -29,8 +29,7 @@ class ProfilePage extends React.Component {
     };
 
     render() {
-        console.log('q')
-        return <Profile savePhoto={this.props.savePhoto} isOwner={!this.props.match.params.userId} profile={this.props.profile} isAuth={this.props.isAuth} status={this.props.profileStatus} setProfileStatus={this.props.setProfileStatus} />
+        return <Profile saveProfile={this.props.saveProfile} savePhoto={this.props.savePhoto} isOwner={!this.props.match.params.userId} profile={this.props.profile} isAuth={this.props.isAuth} status={this.props.profileStatus} setProfileStatus={this.props.setProfileStatus} />
     };
 };
 
@@ -48,7 +47,8 @@ let newDispatchToProps = {
     getProfile,
     getStatus,
     setProfileStatus,
-    savePhoto
+    savePhoto,
+    saveProfile
 };
 
 

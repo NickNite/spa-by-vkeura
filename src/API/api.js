@@ -13,7 +13,6 @@ export const userApi = {
     showUsers(item1, item2) {
         return instance.get(`users?page=${item1}&count=${item2}`) //запрашиваем список пользователей
             .then(response => response.data)
-        debugger
     },
     unFollow(id) {
         return instance.delete(`follow/${id}`) //отписываемся от пользователя
@@ -45,7 +44,10 @@ export const profileApi = {
                 'Content-Type': 'multipart/form-data'
             }
         })//меняем статус (тому кто авторизирован)
-    }
+    },
+    saveProfile(profile) {
+        return instance.put(`/profile`, profile) // меняем данные в профиле
+    },
 };
 
 

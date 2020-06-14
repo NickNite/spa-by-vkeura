@@ -16,7 +16,9 @@ body{
   grid-area: c;
   margin-top: 20px;
 }
-
+.error{
+  color: red;   
+}
 
 
 

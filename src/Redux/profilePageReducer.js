@@ -1,4 +1,5 @@
 import { profileApi } from '../API/api';
+import { stopSubmit } from 'redux-form';
 
 
 let ADD_POST = 'src/Redux/ADD-POST';
@@ -74,6 +75,18 @@ export const savePhoto = (photo) => {
         if (response.data.resultCode === 0) {
             dispatch(savePhotoSuccess(response.data.data.photos))
         };
+    }
+};
+export const saveProfile = (profile) => {
+    return async (dispatch, getState) => {
+        let userId = getState().authData.data.id;
+        let response = await profileApi.saveProfile(profile); //меняем аватар
+        if (response.data.resultCode === 0) {
+            dispatch(getProfile(userId))
+        } else {
+            dispatch(stopSubmit("profileInfo", { _error: response.data.messages[0] }));
+            return Promise.reject(response.data.messages[0])
+        }
     }
 };
 

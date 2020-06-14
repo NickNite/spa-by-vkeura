@@ -13,7 +13,7 @@
   background-color: white;
   border-radius: 5px;
   margin: 20px;
-  box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
+  border: 1px solid #e7e8ec;
   max-height: 230px;
 }
 .photos input{
@@ -23,35 +23,84 @@
   border-bottom: 1px solid #e7e8ec;
   margin: 10px 20px 20px 20px;
 }
-.text{
-      border-radius: 5px;
-      box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
-      background-color: white;
-      margin: 20px 0px 20px 0px;
-      line-height: 10px;
-      width: 100%;
-    }
+.userInfo{
+  border-radius: 5px;
+  border: 1px solid #e7e8ec;
+  background-color: white;
+  margin: 20px 0px 20px 0px;
+  line-height: 10px;
+  width: 100%;
+}
+.editForm{
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
+  background-color: white;
+  line-height: 10px;
+  width: 100%;
+  border: 1px solid black;
+}
+.editForm input{
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #e7e8ec;
+}
+.editForm input:focus{
+  outline: none;
+}
+.editForm .checkbox{
+  width: 20px;
+  height: 20px;
+}
+.editForm .userName div {
+  display: flex;
+  margin: 20px 10px 10px 10px;
+  align-items: center;
+}
 .text h1{
       font-weight: normal;
       padding-bottom: 0px;
       margin-top: 30px;
     }
 .profileInfo{
-  margin: 20px 20px 20px 20px;
+  margin: 0px 20px 20px 20px;
+  word-break: break-all;
+  line-height: 15px;
 }
-.profileInfo p{
-  margin: 20px;
-
+.profileEdit div, .profileInfo div{
+  margin: 2px 0px 2px 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
-.profileInfo span{
+.profileInfo span, .profileEdit span, .profileEdit input, .profileEdit textarea{
   margin-left: 100px;
+  width: 300px;
 }
-.profileInfo h4{
- padding: 0px;
- margin: 0px;
+.profileInfo button, .profileEdit button{
+  position: relative;
+  left: 600px;
+  padding: 5px 50px;
+  margin: 0px;
+  border: none;
+  background-color: #e5ebf1;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.profileInfo button:focus{
+  outline: none;
+}
+.profileInfo b, .profileEdit b, .profileEdit i, .profileInfo i{
+ margin: 10px;
  display: inline-block;
  width: 100px;
+ line-height: 15px;
 }
+.profileInfo p{
+  border-top: 1px solid #e7e8ec;
+}
+
 .statusMain{
     margin: 20px 0px 20px 0px;
     width: 600px;

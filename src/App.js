@@ -19,11 +19,11 @@ const Setting = React.lazy(() => import('./Components/Setting/Setting'));
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.inicializedApp();// запускаем thunk для инициализации пользователя и отображения app компоненты
+    this.props.inicializedApp();    // запускаем thunk для инициализации пользователя и отображения app компоненты
   }
 
   render() {
-    if (!this.props.inicialized) {// Проверяем инициализирован ли пользователь
+    if (!this.props.inicialized) {  // Проверяем инициализирован ли пользователь
       return <Preloader />
     }
     return (
