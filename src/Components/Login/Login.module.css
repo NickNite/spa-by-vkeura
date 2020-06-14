@@ -39,11 +39,11 @@ color: white;
     display: flex;
     flex-direction: column;
 }
-.inputs input{
+.inputs input, .captchaInput{
     height: 30px;
     border: 1px solid #e3e4e8;
 }
-.inputs input:focus{
+.inputs input, .captchaInput:focus{
     outline: none;
 }
 .inputs span{
@@ -52,6 +52,13 @@ color: white;
 }
 .checkbox{
     text-align: center;
+}
+.captcha{
+    border: 1px solid #e3e4e8;
+    margin: 20px 0px 0px 50px;
+}
+.captchaInput{
+    margin: 0px 30px 0px 30px;
 }
 
 

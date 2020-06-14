@@ -4,6 +4,7 @@ import Preloader from '../../CommonFile/Preloader/Preloader';
 import userNoPhoto from '../../../Decor/Image/userNoPhoto.png'
 import MyProfileStatus from './MyProfileStatus';
 import { ProfileInfo, ProfileInfoReduxForm } from './ProfileInfoEdit';
+import MyFriends from '../Friends/FriendsContainer';
 
 
 
@@ -29,14 +30,19 @@ const MyProfile = ({ saveProfile, profile, ...props }) => {
     };
     return (
         <div className={styles.myProfile}>
-            <div className={styles.photos}>
-                <img src={!profile.photos.large ? userNoPhoto : profile.photos.small} />
-                {props.isOwner &&
-                    <div className={styles.inputBlock}>
-                        <input type={"file"} onChange={changePhoto} name="file" id="file" className={styles.inputHidden} />
-                        <label for="file" className={styles.inputButton}>Change photo</label>
-                    </div>
-                }
+            <div className={styles.left}>
+                <div className={styles.photos}>
+                    <img src={!profile.photos.large ? userNoPhoto : profile.photos.small} />
+                    {props.isOwner &&
+                        <div className={styles.inputBlock}>
+                            <input type={"file"} onChange={changePhoto} name="file" id="file" className={styles.inputHidden} />
+                            <label for="file" className={styles.inputButton}>Change photo</label>
+                        </div>
+                    }
+                </div>
+                <div className={styles.friends}>
+                    <MyFriends />
+                </div>
             </div>
             <div className={styles.userInfo}>
                 {editMode

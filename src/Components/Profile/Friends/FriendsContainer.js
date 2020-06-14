@@ -9,10 +9,8 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
 
-}
 
-const MyFriends = connect(mapStateToProps, mapDispatchToProps)(Friends);
+const MyFriends = connect(mapStateToProps, null)(Friends);
 
 export default MyFriends;

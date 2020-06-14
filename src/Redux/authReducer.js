@@ -2,6 +2,7 @@ import { authApi } from "../API/api";
 import { stopSubmit } from "redux-form";
 
 const SET_USER_DATA = 'src/Redux/SET-USER-DATA';
+const SET_CAPTCHA_URL = 'src/Redux/SET-CAPTCHA-URL';
 
 
 let inicialState = {
@@ -12,6 +13,7 @@ let inicialState = {
     },
     isAuth: false,
     messages: [],
+    captchaUrl: null,
 };
 
 const authReducer = (state = inicialState, action) => {
@@ -22,6 +24,11 @@ const authReducer = (state = inicialState, action) => {
                 data: action.payload,
                 isAuth: action.auth
             }
+        case SET_CAPTCHA_URL:
+            return {
+                ...state,
+                captchaUrl: action.captchaUrl
+            }
         default:
             return state;
     }
@@ -30,35 +37,43 @@ const authReducer = (state = inicialState, action) => {
 
 //Action creator
 export const setUserData = ({ id, login, email }, auth) => { return { type: SET_USER_DATA, payload: { id, login, email }, auth } };
+export const setCaptchaUrlSuccess = (captchaUrl) => { return { type: SET_CAPTCHA_URL, captchaUrl } };
 
 
 
 // thunk
-export const getMyProfile = () => (dispatch) => { // показываем данные пользователя
-    return authApi.showMyProfile().then(data => {
-        if (data.resultCode === 0) {
-            let { id, login, email } = data.data
-            dispatch(setUserData({ id, login, email }, true))
-        }
-    })
-};
-export const login = (email, password, rememberMe) => (dispatch) => {// авторизируемся на сайте
-    authApi.login(email, password, rememberMe).then(data => {
-        if (data.resultCode === 0) {
-            dispatch(getMyProfile())
-        } else {
-            let message = data.messages.length > 0 ? data.messages : 'Some error';
-            dispatch(stopSubmit('login', { _error: message }))
-        }
-    })
+export const getMyProfile = () => async (dispatch) => {      // показываем данные пользователя
+    const data = await authApi.showMyProfile();
+    if (data.resultCode === 0) {
+        let { id, login, email } = data.data
+        dispatch(setUserData({ id, login, email }, true))
+    }
 };
 
-export const logout = () => (dispatch) => {// вылогиниваемся из профиля
-    authApi.logout().then(data => {
-        if (data.resultCode === 0) {
-            dispatch(setUserData({ userId: null, login: null, email: null }, false))
+export const login = (email, password, rememberMe, captcha) => async (dispatch) => {// авторизируемся на сайте
+    const data = await authApi.login(email, password, rememberMe, captcha);
+    if (data.resultCode === 0) {
+        debugger
+        dispatch(getMyProfile())
+    } else {
+        if (data.resultCode === 10) {
+            dispatch(getCaptcha())
         }
-    })
+        let message = data.messages.length > 0 ? data.messages : 'Some error';
+        dispatch(stopSubmit('login', { _error: message }))
+    }
+};
+
+export const logout = () => async (dispatch) => {// вылогиниваемся из профиля
+    const data = await authApi.logout()
+    if (data.resultCode === 0) {
+        dispatch(setUserData({ userId: null, login: null, email: null }, false))
+    }
+};
+
+export const getCaptcha = () => async (dispatch) => {                   // вылогиниваемся из профиля
+    const data = await authApi.getCaptcha();
+    dispatch(setCaptchaUrlSuccess(data.url))
 };
 
 

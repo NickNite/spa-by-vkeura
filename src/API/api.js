@@ -31,22 +31,22 @@ export const profileApi = {
         return instance.get(`profile/${userId}`) //запрашиваем профиль
     },
     getProfileStatus(userId) {
-        return instance.get(`/profile/status/${userId}`)//запрашиваем статус пользователя
+        return instance.get(`profile/status/${userId}`)//запрашиваем статус пользователя
     },
     setProfileStatus(status) {
-        return instance.put(`/profile/status`, { status })//меняем статус (тому кто авторизирован)
+        return instance.put(`profile/status`, { status })//меняем статус (тому кто авторизирован)
     },
     savePhoto(photo) {
         let formData = new FormData();
         formData.append('file', photo);
-        return instance.put(`/profile/photo`, formData, {
+        return instance.put(`profile/photo`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
         })//меняем статус (тому кто авторизирован)
     },
     saveProfile(profile) {
-        return instance.put(`/profile`, profile) // меняем данные в профиле
+        return instance.put(`profile`, profile) // меняем данные в профиле
     },
 };
 
@@ -58,14 +58,18 @@ export const authApi = {
             .then(response => response.data) //запрашиваем профиль авторизированного пользователя
 
     },
-    login(email, password, rememberMe = false) {
-        return instance.post(`/auth/login`, { email, password, rememberMe }) //логинимся
+    login(email, password, rememberMe = false, captcha = null) {
+        return instance.post(`auth/login`, { email, password, rememberMe, captcha }) //логинимся
             .then(response => response.data)
     },
     logout() {
         return instance.delete(`auth/login`) //вылогиниваемся 
             .then(response => response.data)
     },
+    getCaptcha() {
+        return instance.get(`security/get-captcha-url`)
+            .then(response => response.data)
+    }
 };
 
 

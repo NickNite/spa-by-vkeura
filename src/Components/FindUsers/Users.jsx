@@ -6,7 +6,7 @@ import styles from './Users.module.css';
 
 let Users = (props) => {
     return (<div >
-        <div className={styles.pagination}>
+        <div className={styles.pagination} id='top'>
             <Pagination totalItemCount={props.totalUserCount} pageSize={props.pageSize} newPageChanged={props.newPageChanged} activePage={props.activePage} partSize={10} />
         </div>
         {props.isFetching ? <Preloader /> : null}

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Navs.module.css';
 import { NavLink } from 'react-router-dom';
-import MyFriends from './Friends/FriendsContainer';
 
 const Nav = (props) => {
     return (
@@ -14,7 +13,6 @@ const Nav = (props) => {
                 <li><NavLink activeClassName={styles.active} to='/findusers'>Find Users</NavLink></li>
                 <li className={styles.lastLi}><NavLink activeClassName={styles.active} to='/setting'>Setting</NavLink></li>
             </ul>
-            {/* <MyFriends /> */}
         </nav>
     )
 }

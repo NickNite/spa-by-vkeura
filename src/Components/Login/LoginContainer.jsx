@@ -15,7 +15,7 @@ let minLengthPass = minLengthField(4);
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe)
+        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
     };
 
     if (props.isAuth) return <Redirect to='/profile' />
@@ -24,7 +24,7 @@ const Login = (props) => {
             <div className={styles.text}>
                 <h2>Welcome</h2>
             </div >
-            <LoginReduxForm onSubmit={onSubmit} maxLengthLogin={maxLengthLogin} minLengthLogin={minLengthLogin} maxLengthPass={maxLengthPass} minLengthPass={minLengthPass} />
+            <LoginReduxForm captchaUrl={props.captchaUrl} onSubmit={onSubmit} maxLengthLogin={maxLengthLogin} minLengthLogin={minLengthLogin} maxLengthPass={maxLengthPass} minLengthPass={minLengthPass} />
         </div >
     )
 
@@ -32,7 +32,8 @@ const Login = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isAuth: state.authData.isAuth
+        isAuth: state.authData.isAuth,
+        captchaUrl: state.authData.captchaUrl
     }
 
 }

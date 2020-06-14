@@ -20,6 +20,8 @@ const LoginForm = (props) => {
                 </div>
             </div>
             <div className={styles.checkbox}><Field component={"input"} name={"rememberMe"} type={"checkbox"} />  remember me</div>
+            {props.captchaUrl && <img className={styles.captcha} src={props.captchaUrl} />}
+            {props.captchaUrl && <Field className={styles.captchaInput} component={InputField} name={"captcha"} placeholder="symbols from image" validate={[]} />}
             {props.error && <div className='error'>{props.error}</div>}
             <input name={"button"} type={"submit"} className={styles.button} value="Login in" />
         </form>

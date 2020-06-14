@@ -73,17 +73,20 @@
   justify-content: start;
   align-items: center;
 }
-.profileInfo span, .profileEdit span, .profileEdit input, .profileEdit textarea{
+.profileInfo div span, .profileEdit div span, .profileEdit input, .profileEdit textarea{
   margin-left: 100px;
   width: 300px;
+  color: #42AA3A;
 }
+
 .profileInfo button, .profileEdit button{
   position: relative;
-  left: 600px;
+  left: 550px;
   padding: 5px 50px;
   margin: 0px;
   border: none;
-  background-color: #e5ebf1;
+  color: white;
+  background-color: #42AA3A;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
@@ -125,6 +128,9 @@
     width: 100%;
     margin-left: 10px;
   }
+  .friends{
+    margin: 65px 20px 20px 20px;
+  }
 
 
   /* Кнопка загрузки фото */
@@ -135,10 +141,11 @@
  left: -100px;
  }
  .inputButton{
-   background-color: #e5ebf1;
+   /* background-color: #e5ebf1; */
+   background-color: #42AA3A;
    display: block;
-   font-weight: bold;
    cursor: pointer;
+   color: white;
  }
  .inputBlock{
    text-align: center;
