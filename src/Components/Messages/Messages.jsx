@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Messages.module.css';
 import Dialog from './Dialog/Dialog';
 import Message from './Message/Message';
-import { MesagesFormContainer } from './MessagesContainer';
+import MesagesFormContainer from './MessagesForm';
 
 
 const Messages = (props) => {

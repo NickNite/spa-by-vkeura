@@ -11,7 +11,6 @@ import MyFriends from '../Friends/FriendsContainer';
 
 
 const MyProfile = ({ saveProfile, profile, ...props }) => {
-
     let [editMode, setEditMode] = useState(false);
 
     if (!profile) {
@@ -32,7 +31,7 @@ const MyProfile = ({ saveProfile, profile, ...props }) => {
         <div className={styles.myProfile}>
             <div className={styles.left}>
                 <div className={styles.photos}>
-                    <img src={!profile.photos.large ? userNoPhoto : profile.photos.small} />
+                    <img src={!profile.photos.large ? userNoPhoto : profile.photos.large} />
                     {props.isOwner &&
                         <div className={styles.inputBlock}>
                             <input type={"file"} onChange={changePhoto} name="file" id="file" className={styles.inputHidden} />
@@ -47,7 +46,7 @@ const MyProfile = ({ saveProfile, profile, ...props }) => {
             <div className={styles.userInfo}>
                 {editMode
                     ? <ProfileInfoReduxForm initialValues={profile} onSubmit={onSubmit} editModeToggle={() => { setEditMode(false) }} profile={profile} isOwner={props.isOwner} />
-                    : <ProfileInfo status={props.status} setProfileStatus={props.setProfileStatus} editModeToggle={() => { setEditMode(true) }} profile={profile} isOwner={props.isOwner} />}
+                    : <ProfileInfo isOwner={props.isOwner} status={props.status} setProfileStatus={props.setProfileStatus} editModeToggle={() => { setEditMode(true) }} profile={profile} isOwner={props.isOwner} />}
             </div>
         </div>
     )

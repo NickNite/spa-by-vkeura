@@ -1,5 +1,5 @@
 import { profileApi } from '../API/api';
-import { stopSubmit } from 'redux-form';
+import { stopSubmit, reset } from 'redux-form';
 
 
 let ADD_POST = 'src/Redux/ADD-POST';
@@ -11,10 +11,10 @@ let SAVE_PHOTO = 'src/Redux/SAVE-PHOTO';
 let inicialState = {
     postsData: [
         { id: 1, message: 'Hello wold', like: '5' },
-        { id: 2, message: 'Bye World', like: '10' },
-        { id: 3, message: 'My name is', like: '6' }
+        { id: 2, message: "I'm good", like: '10' },
+        { id: 3, message: 'learning react', like: '6' }
     ],
-    newTextOnPost: 'qwe',
+    newTextOnPost: '',
     profileDate: null,
     profileStatus: '',
 };
@@ -46,6 +46,7 @@ export const setUserProfile = (profile) => { return { type: SET_USER_PROFILE, pr
 export const getUserStatus = (status) => { return { type: GET_PROFILE_STATUS, status } };
 export const deletePosts = (userId) => { return { type: DELETE_POST, userId } };
 export const savePhotoSuccess = (photo) => { return { type: SAVE_PHOTO, photo } };
+
 
 
 //thunk
@@ -80,9 +81,9 @@ export const savePhoto = (photo) => {
 export const saveProfile = (profile) => {
     return async (dispatch, getState) => {
         let userId = getState().authData.data.id;
-        let response = await profileApi.saveProfile(profile); //меняем аватар
+        let response = await profileApi.saveProfile(profile); //меняем информацию о профиле
         if (response.data.resultCode === 0) {
-            dispatch(getProfile(userId))
+            dispatch(getProfile(userId));
         } else {
             dispatch(stopSubmit("profileInfo", { _error: response.data.messages[0] }));
             return Promise.reject(response.data.messages[0])

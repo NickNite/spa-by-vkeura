@@ -5,7 +5,7 @@
 .myProfile img{
       width: 150px;
       height: 150px;
-      margin: 20px 20px 0px 20px;
+      margin: 20px 20px 0px 35px;
     }  
 .photos{
   display: flex;
@@ -14,7 +14,8 @@
   border-radius: 5px;
   margin: 20px;
   border: 1px solid #e7e8ec;
-  max-height: 230px;
+  height: 230px;
+  
 }
 .photos input{
   margin-left: 20px;
@@ -108,12 +109,12 @@
     margin: 20px 0px 20px 0px;
     width: 600px;
   }
-.status{
+.status, .statusGuest{
     margin-top: 30px;
     border-radius: 3px;
      padding: 0px;
      }
-.status p{
+.status p, .statusGuest p{
     padding: 5px;
     margin-left: 5px;
     font-size: 14px;
@@ -149,7 +150,7 @@
  }
  .inputBlock{
    text-align: center;
-   margin: 20px 0px 20px 20px;
+   margin: 20px 0px 20px 35px;
    width: 150px;
    
  }

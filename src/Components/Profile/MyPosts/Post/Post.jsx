@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './Post.module.css';
 import like from '../../../../Decor/Image/Like.png'
 
+
 const Post = props => {
+
     return (
         <div className={styles.post}>
             <div className={styles.image}>
-                <img src='https://www.meme-arsenal.com/memes/bf0296e8bfa92558d0ca180289194068.jpg' />
+                <img src={props.profile.photos.small} />
             </div>
             <div className={styles.text}><p>{props.message}</p></div>
             <div className={styles.like}>

@@ -13,7 +13,7 @@ export const ProfileInfo = ({ profile, ...props }) => {
         <div className={styles.text}>
             <div className={styles.userName}>
                 <h1>{profile.fullName}</h1>
-                <MyProfileStatus status={props.status} setProfileStatus={props.setProfileStatus} />
+                <MyProfileStatus isOwner={props.isOwner} status={props.status} setProfileStatus={props.setProfileStatus} />
             </div>
             <div className={styles.profileInfo}>
                 {props.isOwner && <button onClick={props.editModeToggle}>Edit</button>}

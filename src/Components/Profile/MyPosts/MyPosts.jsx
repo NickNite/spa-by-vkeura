@@ -1,26 +1,30 @@
 import React from 'react';
 import styles from './MyPosts.module.css';
 import Post from './Post/Post';
-import { MyPostFormContainer } from './MyPostsContainer';
+import { MyPostForm } from './MyPostsForm';
+
 
 
 const MyPosts = props => {
-    let newPostsData = props.newPostsData.map((item, index) => {
-        return <Post key={index} message={item.message} likeCount={item.like} />
-    });
 
-    let addNewPost = (values) => {
-        props.updatePosts(values.newPost);
+    if (!props.profile) {
+        return ''
     };
+
+    let newPostsData = props.newPostsData.map((item, index) => {
+        return <Post profile={props.profile} key={index} message={item.message} likeCount={item.like} />
+    });
 
     return (
         <div>
-            <div className={styles.newPost}>
-                <MyPostFormContainer onSubmit={addNewPost} />
-            </div>
-            <div >
-                {newPostsData}
-            </div>
+            {props.isOwner && <div>
+                <div className={styles.newPost}>
+                    <MyPostForm onSubmit={props.onSubmit} />
+                </div>
+                <div >
+                    {newPostsData}
+                </div>
+            </div>}
         </div >
     )
 

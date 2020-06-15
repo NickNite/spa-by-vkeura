@@ -27,14 +27,15 @@ const MyProfileStatus = props => {
 
     return (
         <div className={styles.statusMain}>
-            {!editMode ?
-                <div className={styles.status}>
-                    <p onClick={activeEditMode}>{props.status || 'Add Status'}</p>
-                </div>
-                :
-                <div className={styles.inputParent}>
+            {props.isOwner ? editMode
+                ? <div className={styles.inputParent}>
                     <input className={styles.input} autoFocus={true} onChange={onChanged} onBlur={deActivetedEditMode} type="text" value={status} />
                 </div>
+                : <div className={styles.status}>
+                    <p onClick={activeEditMode}>{props.status || 'Add Status'}</p>
+                </div>
+                : <div className={styles.statusGuest}>
+                    <p>{props.status}</p></div>
             }
         </div>
     )
