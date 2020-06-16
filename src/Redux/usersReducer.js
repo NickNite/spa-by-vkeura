@@ -60,7 +60,7 @@ export const setToggleFitching = (newFetching) => { return { type: TOGGLE_FETCHI
 export const setToggleDisabled = (disabled, userId) => { return { type: TOGGLE_DISABLED, disabled, userId } };
 
 
-const isFollowedFlow = async (dispatch, userId, apiMethod, followed) => {
+const isFollowedFlow = async (dispatch, userId, apiMethod, followed) => { //Функция для подписки, отписки (Function for subscribing, unsubscribing)
     dispatch(setToggleDisabled(true, userId));
     let data = await apiMethod(userId);
     if (data.resultCode === 0) {
@@ -71,7 +71,7 @@ const isFollowedFlow = async (dispatch, userId, apiMethod, followed) => {
 
 
 //thunk
-export const requestUsers = (page, pageSize) => {    //показываем пользователей
+export const requestUsers = (page, pageSize) => {    //Показываем пользователей (We show users)
     return async (dispatch) => {
         dispatch(setToggleFitching(true));
         dispatch(setPage(page));
@@ -82,12 +82,12 @@ export const requestUsers = (page, pageSize) => {    //показываем по
     }
 };
 
-export const unFollowUser = (id) => {    //отписываемся от пользователя
+export const unFollowUser = (id) => {    //Отписываемся от пользователя (Unsubscribe from user)
     return async (dispatch) => {
         isFollowedFlow(dispatch, id, userApi.unFollow.bind(userApi), setUnFollow)
     }
 };
-export const followUser = (id) => {      //подписываемся на пользователя
+export const followUser = (id) => {      //Подписываемся на пользователя (Subscribe to the user)
     return async (dispatch) => {
         isFollowedFlow(dispatch, id, userApi.follow.bind(userApi), setFollow)
     }

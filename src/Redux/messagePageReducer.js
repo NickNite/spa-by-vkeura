@@ -14,7 +14,6 @@ let inicialState = {
         { id: 2, item: 'What is your name?' },
         { id: 3, item: 'How old are you?' }
     ],
-    newTextOnMessage: '',
 };
 
 const messagePageReducer = (state = inicialState, action) => {

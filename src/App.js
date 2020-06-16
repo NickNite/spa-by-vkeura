@@ -20,11 +20,11 @@ const Setting = React.lazy(() => import('./Components/Setting/Setting'));
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.inicializedApp();    // запускаем thunk для инициализации пользователя и отображения app компоненты
+    this.props.inicializedApp();    // Запускаем thunk для инициализации пользователя и отображения app компоненты (Run thunk to initialize the user and display the app components)
   }
 
   render() {
-    if (!this.props.inicialized) {  // Проверяем инициализирован ли пользователь
+    if (!this.props.inicialized) {  // Проверяем инициализацию пользователя (Check user initialization)
       return <Preloader />
     }
     return (
@@ -57,5 +57,7 @@ let mapStateToProps = (state) => {
 
 export default compose(
   withRouter,
-  connect(mapStateToProps, { inicializedApp }))// Оборачиваем app в withRouter для корректной работы Route, коннектим store для получения стейта и запуска thunk из appReducer
-  (App);
+  connect(mapStateToProps, { inicializedApp }))// Оборачиваем app в withRouter для корректной работы Route, коннектим store для получения стейта и запуска thunk из appReducer 
+  (App);                                       //(We wrap the app in withRouter for Route to work correctly, connect the store to get the state and start thunk from appReducer)
+
+

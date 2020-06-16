@@ -1,6 +1,9 @@
 import profilePageReducer from "./profilePageReducer";
 import messagePageReducer from "./messagePageReducer";
 
+// Использовался в учебных целях, оставил как наглядный пример для визуализации стора (Used for educational purposes, left as a good example for visualizing the store)
+
+
 let store = {
     _state: {
         profilePage: {

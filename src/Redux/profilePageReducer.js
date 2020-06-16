@@ -1,5 +1,5 @@
 import { profileApi } from '../API/api';
-import { stopSubmit, reset } from 'redux-form';
+import { stopSubmit } from 'redux-form';
 
 
 let ADD_POST = 'src/Redux/ADD-POST';
@@ -14,7 +14,6 @@ let inicialState = {
         { id: 2, message: "I'm good", like: '10' },
         { id: 3, message: 'learning react', like: '6' }
     ],
-    newTextOnPost: '',
     profileDate: null,
     profileStatus: '',
 };
@@ -52,19 +51,19 @@ export const savePhotoSuccess = (photo) => { return { type: SAVE_PHOTO, photo } 
 //thunk
 export const getProfile = (userId) => {
     return async (dispatch) => {
-        let response = await profileApi.showProfile(userId); //показываем пользователя
+        let response = await profileApi.showProfile(userId); //Показываем пользователя (Showing user)
         dispatch(setUserProfile(response.data));
     }
 };
 export const getStatus = (userId) => {
     return async (dispatch) => {
-        let response = await profileApi.getProfileStatus(userId); //показываем статус пользователя
+        let response = await profileApi.getProfileStatus(userId); //Показываем статус пользователя (Show user status)
         dispatch(getUserStatus(response.data));
     }
 };
 export const setProfileStatus = (status) => {
     return async (dispatch) => {
-        let response = await profileApi.setProfileStatus(status); //меняем статус
+        let response = await profileApi.setProfileStatus(status); //Меняем статус (Change status)
         if (response.data.resultCode === 0) {
             dispatch(getUserStatus(status))
         };
@@ -72,7 +71,7 @@ export const setProfileStatus = (status) => {
 };
 export const savePhoto = (photo) => {
     return async (dispatch) => {
-        let response = await profileApi.savePhoto(photo); //меняем аватар
+        let response = await profileApi.savePhoto(photo); //Меняем аватар (Change the avatar)
         if (response.data.resultCode === 0) {
             dispatch(savePhotoSuccess(response.data.data.photos))
         };
@@ -81,7 +80,7 @@ export const savePhoto = (photo) => {
 export const saveProfile = (profile) => {
     return async (dispatch, getState) => {
         let userId = getState().authData.data.id;
-        let response = await profileApi.saveProfile(profile); //меняем информацию о профиле
+        let response = await profileApi.saveProfile(profile); //Меняем информацию о профиле (Change profile information)
         if (response.data.resultCode === 0) {
             dispatch(getProfile(userId));
         } else {

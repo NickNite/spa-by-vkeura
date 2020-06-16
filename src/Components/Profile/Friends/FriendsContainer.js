@@ -1,6 +1,6 @@
 import Friends from './Friends';
 import { connect } from 'react-redux';
-
+//Компонента на стадии разработки (Component under development)!!!!!!!
 
 
 let mapStateToProps = (state) => {
@@ -8,7 +8,6 @@ let mapStateToProps = (state) => {
         friends: state.messagePage.dialogData
     }
 }
-
 
 
 const MyFriends = connect(mapStateToProps, null)(Friends);

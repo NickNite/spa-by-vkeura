@@ -7,13 +7,12 @@ import MesagesFormContainer from './MessagesForm';
 
 const Messages = (props) => {
 
-
     let newDialogData = props.dialogList.map((item, index) => {
-        return <Dialog key={index} name={item.name} link={item.link} avatar={item.avatar} />
+        return <Dialog key={index} name={item.name} link={item.link} avatar={item.avatar} /> //Создаем список контактов (Create a contact list)
     });
 
     let newMessData = props.messageList.map((text, index) => {
-        return <Message key={index} mess={text.item} />
+        return <Message key={index} mess={text.item} /> // Создаем список сообщений (Create a message list)
     });
 
 

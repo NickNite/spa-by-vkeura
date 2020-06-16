@@ -6,11 +6,11 @@ import { withRouter } from 'react-router-dom';
 import { withAuthRedirect } from '../../HOCS/withAuthRedirect';
 import { compose } from 'redux';
 
-
+//Контейнерная компонента для страницы профиля пользователя (Container component for user profile page)
 class ProfilePage extends React.Component {
 
     refreshProfile() {
-        let userId = this.props.match.params.userId;
+        let userId = this.props.match.params.userId;   //Проверка пользователя для корректного отображения страницы его профиля (User verification for the correct display of his profile page)
         if (!userId) {
             userId = this.props.logUserId;
         }
@@ -19,11 +19,11 @@ class ProfilePage extends React.Component {
     };
 
     componentDidMount() {
-        this.refreshProfile();
+        this.refreshProfile(); // Обновление профиля при переходе на страницу (Profile update when going to page)
     };
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.match.params.userId != prevProps.match.params.userId) {
+        if (this.props.match.params.userId != prevProps.match.params.userId) { // Обновления профиля при изменении пользователя (Profile Updates on User Change)
             this.refreshProfile();
         }
     };

@@ -42,7 +42,7 @@ export const setCaptchaUrlSuccess = (captchaUrl) => { return { type: SET_CAPTCHA
 
 
 // thunk
-export const getMyProfile = () => async (dispatch) => {      // показываем данные пользователя
+export const getMyProfile = () => async (dispatch) => {      // Показываем данные пользователя (Showing user data)
     const data = await authApi.showMyProfile();
     if (data.resultCode === 0) {
         let { id, login, email } = data.data
@@ -50,7 +50,7 @@ export const getMyProfile = () => async (dispatch) => {      // показыва
     }
 };
 
-export const login = (email, password, rememberMe, captcha) => async (dispatch) => {// авторизируемся на сайте
+export const login = (email, password, rememberMe, captcha) => async (dispatch) => {// Авторизируемся на сайте (Log in to the site)
     const data = await authApi.login(email, password, rememberMe, captcha);
     if (data.resultCode === 0) {
         debugger
@@ -64,14 +64,14 @@ export const login = (email, password, rememberMe, captcha) => async (dispatch) 
     }
 };
 
-export const logout = () => async (dispatch) => {// вылогиниваемся из профиля
+export const logout = () => async (dispatch) => {// Вылогиниваемся из профиля (Log out of profile)
     const data = await authApi.logout()
     if (data.resultCode === 0) {
         dispatch(setUserData({ userId: null, login: null, email: null }, false))
     }
 };
 
-export const getCaptcha = () => async (dispatch) => {                   // вылогиниваемся из профиля
+export const getCaptcha = () => async (dispatch) => {                   // Показываем капчу (Show captcha)
     const data = await authApi.getCaptcha();
     dispatch(setCaptchaUrlSuccess(data.url))
 };

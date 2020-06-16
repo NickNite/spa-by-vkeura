@@ -15,8 +15,7 @@ let state = {
         { id: 2, item: 'What is your name?' },
         { id: 3, item: 'How old are you?' }
     ],
-    newTextOnMessage: '',
-}
+};
 
 test('test create new message', () => {
     let addMessage = createNewMessage('test text');

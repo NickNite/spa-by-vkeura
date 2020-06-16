@@ -7,7 +7,6 @@ let state = {
         { id: 2, message: 'Bye World', like: '10' },
         { id: 3, message: 'My name is', like: '6' }
     ],
-    newTextOnPost: 'qwe',
     profileDate: null,
     profileStatus: '',
 };

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
 
 
-
+// Хок редиректа если пользователь не авторизирован (HOC redirect if the user is not authorized)
 let mapStateToProps = state => {
     return {
         isAuth: state.authData.isAuth

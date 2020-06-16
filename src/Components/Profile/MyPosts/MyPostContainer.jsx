@@ -3,8 +3,10 @@ import { updatePosts } from '../../../Redux/profilePageReducer';
 import MyPosts from './MyPosts'
 import { connect } from 'react-redux';
 
+//Компонента на стадии разработки (Component under development)!!!!!!!
 
 
+//Компонента отображающая посты пользователя (Component displaying user posts)
 class MyPostContainer extends React.Component {
     addNewPost(values) {
         this.props.updatePosts(values.newPost);

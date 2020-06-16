@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './MyProfile.module.css';
 
 
-
+//Компонента изменения статуса пользователя (User Status Change Component)
 const MyProfileStatus = props => {
 
     let [editMode, setEditMode] = useState(false);
@@ -39,7 +39,7 @@ const MyProfileStatus = props => {
             }
         </div>
     )
-}
+};
 
 
 export default MyProfileStatus;

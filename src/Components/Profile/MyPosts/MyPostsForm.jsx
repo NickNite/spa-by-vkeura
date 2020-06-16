@@ -15,7 +15,7 @@ const myPostForm = props => {
     )
 };
 
-const afterSubmit = (result, dispatch) =>
+const afterSubmit = (result, dispatch) => //Функция очищает инпут после отправки формы (Function clears input after form submission)
     dispatch(reset('myPost'));
 
 

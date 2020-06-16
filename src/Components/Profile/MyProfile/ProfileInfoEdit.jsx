@@ -7,7 +7,7 @@ import MyProfileStatus from './MyProfileStatus';
 const Contacts = ({ itemName, itemValue }) => {
     return <div><i>{itemName}:</i><span>{itemValue}</span></div>
 };
-
+//Показывает информацию о пользователе (Shows user information)
 export const ProfileInfo = ({ profile, ...props }) => {
     return (
         <div className={styles.text}>
@@ -28,6 +28,7 @@ export const ProfileInfo = ({ profile, ...props }) => {
     )
 };
 
+//Показывает форму для заполения данными о пользователе (Shows a form for filling in user data)
 const ProfileInfoForm = ({ handleSubmit, profile, ...props }) => {
     return (
         <form onSubmit={handleSubmit}>

@@ -8,10 +8,9 @@ const Header = (props) => {
             <img src='https://paloma365.kz/wp-content/uploads/2019/05/mega-logo-100x100.png' />
             <div className={styles.login}>
                 {props.isAuth ?
-                    <div><span>{props.userLogin}</span><button onClick={props.logout}>LogOut</button></div>
+                    <div><span>{props.userLogin}</span><button onClick={props.logout}>LogOut</button></div> //Кнопки для логина и логаута (Buttons for login and logout)
                     : <NavLink to='/login'>Login</NavLink>}
             </div>
-
         </div>
     )
 }

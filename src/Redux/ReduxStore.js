@@ -16,9 +16,8 @@ let reducers = combineReducers({
     form: formReducer
 });
 
-// let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;   //Подключаем плагины в браузере для приложения (We connect plug-ins in the browser for application)
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
 
 window.store = store;

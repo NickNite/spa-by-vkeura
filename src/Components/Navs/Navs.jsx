@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Navs.module.css';
 import { NavLink } from 'react-router-dom';
 
+//Sidebar
 const Nav = (props) => {
     return (
         <nav className={styles.sidebar}>
@@ -15,6 +16,6 @@ const Nav = (props) => {
             </ul>
         </nav>
     )
-}
+};
 
 export default Nav;

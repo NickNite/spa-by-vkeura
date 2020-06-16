@@ -5,7 +5,7 @@ import { InputField } from '../CommonFile/Utils/CustomForm/myInputs';
 import { requiredSymbol } from '../CommonFile/Utils/FormControl/FormValidator';
 
 
-
+//Форма для заполнения (Form to fill)
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={styles.form}>
@@ -28,4 +28,4 @@ const LoginForm = (props) => {
     )
 };
 
-export const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm); //оборачиваем нужную форму 
+export const LoginReduxForm = reduxForm({ form: 'login' })(LoginForm); //Оборачиваем форму в контейнерную redux-form (Wrap the form in a container redux-form)

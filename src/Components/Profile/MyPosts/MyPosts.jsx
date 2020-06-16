@@ -7,7 +7,7 @@ import { MyPostForm } from './MyPostsForm';
 
 const MyPosts = props => {
 
-    if (!props.profile) {
+    if (!props.profile) { //Показывает посты только авторизованного пользователя(Shows authorized user posts only)
         return ''
     };
 
