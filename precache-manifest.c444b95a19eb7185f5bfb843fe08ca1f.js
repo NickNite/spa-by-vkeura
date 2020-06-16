@@ -1,43 +1,43 @@
 self.__precacheManifest = [
   {
-    "revision": "bc369389a5afc2f22e70",
+    "revision": "450386279a4a5dbe6e75",
     "url": "/spa-by-vkeura/static/css/main.9e49d74f.chunk.css"
   },
   {
-    "revision": "bc369389a5afc2f22e70",
-    "url": "/spa-by-vkeura/static/js/main.e5f7d9ac.chunk.js"
+    "revision": "450386279a4a5dbe6e75",
+    "url": "/spa-by-vkeura/static/js/main.fd36e261.chunk.js"
   },
   {
-    "revision": "8c108a7449b8305ac6f6",
-    "url": "/spa-by-vkeura/static/js/runtime~main.2689cf8c.js"
+    "revision": "e8bd3cb98c8709b4f415",
+    "url": "/spa-by-vkeura/static/js/runtime~main.58c3a466.js"
   },
   {
-    "revision": "7479f9bf9c8297566201",
-    "url": "/spa-by-vkeura/static/js/2.d8d1860e.chunk.js"
+    "revision": "da5a4eac348182904e31",
+    "url": "/spa-by-vkeura/static/js/2.c4f16180.chunk.js"
   },
   {
-    "revision": "9168e8d911d94a222aa8",
+    "revision": "545e73f8bd945be01ebb",
     "url": "/spa-by-vkeura/static/css/3.c31fcaed.chunk.css"
   },
   {
-    "revision": "9168e8d911d94a222aa8",
-    "url": "/spa-by-vkeura/static/js/3.13fb82af.chunk.js"
+    "revision": "545e73f8bd945be01ebb",
+    "url": "/spa-by-vkeura/static/js/3.75519abc.chunk.js"
   },
   {
-    "revision": "0a05b9d9b88651624c78",
+    "revision": "e6d48ed6d28f6fe37318",
     "url": "/spa-by-vkeura/static/css/4.d0347a43.chunk.css"
   },
   {
-    "revision": "0a05b9d9b88651624c78",
-    "url": "/spa-by-vkeura/static/js/4.090ac88d.chunk.js"
+    "revision": "e6d48ed6d28f6fe37318",
+    "url": "/spa-by-vkeura/static/js/4.b2aed5fe.chunk.js"
   },
   {
-    "revision": "a9a0fe0b996c3cd24b82",
+    "revision": "c84619239a9fd8ac75dd",
     "url": "/spa-by-vkeura/static/css/5.b052aad0.chunk.css"
   },
   {
-    "revision": "a9a0fe0b996c3cd24b82",
-    "url": "/spa-by-vkeura/static/js/5.8b48175b.chunk.js"
+    "revision": "c84619239a9fd8ac75dd",
+    "url": "/spa-by-vkeura/static/js/5.67711c6e.chunk.js"
   },
   {
     "revision": "c5564743a31e215f9126",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/spa-by-vkeura/static/media/arrow2.85be77cf.png"
   },
   {
-    "revision": "9f193985d294c14ac63087342bf55d95",
+    "revision": "76a7557e7a179d398dc4be0c582ec3e8",
     "url": "/spa-by-vkeura/index.html"
   }
 ];
