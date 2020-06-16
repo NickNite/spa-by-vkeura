@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/spa-by-vkeura/precache-manifest.48c11f0cfceb7a40e972c9cfae3f40d2.js"
+  "/spa-by-vkeura/precache-manifest.de797bd3a09547c3f89798b5530a35b9.js"
 );
 
 workbox.clientsClaim();

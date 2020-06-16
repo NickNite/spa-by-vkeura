@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{306:function(n,e,a){n.exports={main:"News_main__-dYCF"}},309:function(n,e,a){"use strict";a.r(e);var t=a(0),i=a.n(t),o=a(306),r=a.n(o);e.default=function(n){return i.a.createElement("div",{className:r.a.main},i.a.createElement("p",null,"Sorry, not yet available"))}}}]);
-//# sourceMappingURL=7.3a0e188e.chunk.js.map
