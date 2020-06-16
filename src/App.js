@@ -41,7 +41,7 @@ class App extends React.Component {
             <Route path='/music' render={withSuspense(Music)} />
             <Route path='/findusers' render={withSuspense(FindUsersContainer)} />
             <Route path='/setting' render={withSuspense(Setting)} />
-            {/* <Route path='*' render={() => <NotFound />} /> */}
+            <Route path='*' render={() => <NotFound />} />
           </Switch>
         </div>
       </div>
