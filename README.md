@@ -1,3 +1,14 @@
+Link to my test social network for portfolio
+https://nicknite.github.io/spa-by-vkeura
+
+Test account:
+
+Email: free@samuraijs.com
+
+Password: free
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
